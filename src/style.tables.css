@@ -1,0 +1,56 @@
+body {
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  color: black;
+  position: relative;
+  width: max-content;
+}
+label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+}
+table {
+  width: 100%;
+  height: 100%;
+  display: table;
+  border: 7px solid black;
+}
+
+table th {
+  background-color: tomato;
+  color: blue;
+}
+
+table tr {
+  width: 100%;
+  margin: 10px auto;
+}
+table tr td {
+  border: 1px solid black;
+  text-align: center;
+}
+.my-class {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px auto;
+  border: 5px solid gray;
+  padding: 5px;
+  width: 90%;
+}
+.container {
+  text-align: center;
+}
+footer {
+  border: 1px solid black;
+}

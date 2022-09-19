@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form</title>
+
+<script type="text/javascript">
+	
+	function getNextElement(field) 
+	{
+	    var form = field.form;
+	    for ( var e = 0; e < form.elements.length; e++) {
+	        if (field == form.elements[e]) {
+	            break;
+	        }
+	    }
+	    return form.elements[++e % form.elements.length];
+	}
+	
+	function tabOnEnter(field, evt) 
+	{
+		if (evt.keyCode === 13) 
+		{
+	        if (evt.preventDefault) 
+	        {
+	            evt.preventDefault();
+	        } 
+	        else if (evt.stopPropagation) 
+	        {
+	            evt.stopPropagation();
+	        } 
+	        else 
+	        {
+	            evt.returnValue = false;
+	        }
+	        getNextElement(field).focus();
+	        return false;
+	    } else {
+	        return true;
+	    }
+	}
+	
+	function isNumberKey(event)
+	{
+		var charCode = (event.which) ? event.which : event.keyCode
+		if (charCode == 8 || charCode > 47 && charCode < 58)
+			{return true;}
+	       else 
+	        {event.preventDefault();}
+	        
+	}
+</script>
+
+
+<script type="text/javascript">
+	// Function that validates the registration form
+	function validateForm()
+	{
+        var customername = document.forms["company-form"]["customername"].value;
+        var adress1 = document.forms["company-form"]["adress1"].value;
+        var zip = document.forms["company-form"]["zip"].value;
+        var town = document.forms["company-form"]["town"].value;
+        var orgnr = document.forms["company-form"]["orgnr"].value;
+        var orgnr_length = orgnr.length;
+        var paycond = document.forms["company-form"]["paycond"].value;
+
+        // If the first name is empty display error message
+        if (customername==null || customername=="") {
+            alert("Fyll i ett företagsnamn");
+			document.getElementById("customername").focus();
+			return false;
+        }
+        // If the last name is empty display error message
+        else if (adress1==null || adress1=="") {
+            alert("Fyll i en adress");
+			document.getElementById("adress1").focus();
+			return false;
+        }
+        // If the epost is empty display error message
+        else if (zip==null || zip=="") {
+            alert("Fyll i ett postnummer");
+			document.getElementById("zip").focus();
+			return false;
+        }
+        // If persnr is empty display error message
+        else if (town==null || town=="") {
+            alert("Fyll i en ort");
+			document.getElementById("town").focus();
+			return false;
+        }
+        
+        // If persnr is empty display error message
+        else if (orgnr==null || orgnr=="") {
+            alert("Fyll i organisationsnummer");
+			document.getElementById("orgnr").focus();
+			return false;
+        }
+        
+        else if (orgnr_length < 10) {
+            alert("Organisationsnummret skall innehålla 10 siffror");
+			document.getElementById("orgnr").focus();
+			return false;
+        }
+        else if (orgnr_length > 10) {
+            alert("Organisationsnummret skall innehålla 10 siffror");
+			document.getElementById("orgnr").focus();
+			return false;
+        }
+        else if(orgnr.indexOf('-')!= -1) {
+            alert("Organisationsnummret skall innehålla 10 siffror, inga andra tecken");
+			document.getElementById("orgnr").focus();
+			return false;
+        }
+        // If paycond not chosen
+        else if (paycond=='0') {
+            alert("Välj betalningsvillkor");
+			document.getElementById("paycond").focus();
+			return false;
+        };
+    	
+	}
+</script>
+
+</head>
+<body>
+    
+
+	<form name="company-form" action="form_cont.html" method="post" onsubmit="return validateForm()">
+	    <h3>Företagsnamn*:</h3>
+		<input type="text" class="input_long" name='customername' id='customername' value="" onkeydown="return tabOnEnter(this,event)"/>
+	    <h3>Adress*:</h3>
+	    <input type="text" class="input_long" name='adress1' id='adress1' value="" style="margin-bottom:6px;" onkeydown="return tabOnEnter(this,event)"/>
+	    <input type="text" class="input_long" name='adress2' value="" onkeydown="return tabOnEnter(this,event)"/>
+	    <table border="0px" cellspacing="0px" cellpadding="0px">
+	        <tr>
+	            <td><h3>Postnummer*:</h3></td>
+	            <td><h3>Postort*:</h3></td>
+	        </tr>
+	        <tr>
+	            <td style="padding-right:6px;"><input type="text" class="input_short" name='zip' id='zip' value="" onkeypress="return isNumberKey(event)" onkeydown="return tabOnEnter(this,event)"/></td>
+	            <td><input type="text" class="input_medium" name='town' id='town' value="" onkeydown="return tabOnEnter(this,event)"/></td>
+	        </tr>
+	    </table>
+	    <h3>Kundens referens:</h3>
+	    <input type="text" class="input_long" name='custref' value="" onkeydown="return tabOnEnter(this,event)"/>
+	    <h3>Vår referens:</h3>
+	    <input type="text" class="input_long" name='ownref' value="" onkeydown="return tabOnEnter(this,event)"/>
+	    <h3>Organisationsnummer*:</h3>
+	    <input type="text" class="input_long" name='orgnr' id='orgnr' value="" onkeypress="return isNumberKey(event)" onkeydown="return tabOnEnter(this,event)" maxlength="10"/>
+	    <br />
+	    <h3>Betalningsvillkor*:</h3>
+	    <p> Välj betalningsvillkor efter överenskommelse med kund.</p>
+    	<select class="select_long" name='paycond' id='paycond'>
+			<option value="0" >Välj</option>
+			<option value="45" >45 dagar</option>
+			<option value="30" >30 dagar</option>
+			<option value="20" >20 dagar</option>
+			<option value="15" >15 dagar</option>
+			<option value="10" >10 dagar</option>
+		</select>
+	    <br /><br />
+	    <div style="float:left;">
+		    <a href="form_cont.html"><input type="submit" class="btn" value="Submit" /></a>
+		</div>
+    </form>
+
+</body>
+</html>
