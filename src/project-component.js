@@ -1,11 +1,12 @@
+"use strict";
 class ProjectComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `  <section id="projects">
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `  <section id="projects">
     <div class="projects container">
       <div class="projects-header">
         <h1 class="section-title">Recent <span>Projects</span></h1>
@@ -27,6 +28,6 @@ class ProjectComponent extends HTMLElement {
       </div>
     </div>
   </section>`;
-  }
+    }
 }
 window.customElements.define("project-component", ProjectComponent);

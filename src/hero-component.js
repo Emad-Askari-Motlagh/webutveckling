@@ -1,11 +1,12 @@
+"use strict";
 class HeroComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `
       <section id="hero">
         <div class="hero_container">
           <button id="my_button" type="button">
@@ -26,7 +27,12 @@ class HeroComponent extends HTMLElement {
                 Portfolio
               </a>
             </div>
-            <img class="primary_img" src="../public/emad2.jpg" />
+
+           
+<img class="primary_img" src="../public/emad2.jpg" />
+
+       
+     
           </div>
           <div id="contact_element" class="contact_parent">
             <label>My direct email</label>
@@ -35,6 +41,6 @@ class HeroComponent extends HTMLElement {
         </div>
       </section>
     `;
-  }
+    }
 }
 window.customElements.define("hero-component", HeroComponent);

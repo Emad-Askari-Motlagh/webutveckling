@@ -1,11 +1,12 @@
+"use strict";
 class ServiceComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `
  <section id="services">
     <div class="services container">
       <div class="service-top">
@@ -43,6 +44,6 @@ class ServiceComponent extends HTMLElement {
     </div>
   </section>
       `;
-  }
+    }
 }
 window.customElements.define("service-component", ServiceComponent);

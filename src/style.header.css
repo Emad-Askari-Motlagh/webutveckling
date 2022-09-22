@@ -1,0 +1,234 @@
+/* Header section */
+:root {
+  --header_height: 70px;
+}
+* {
+  margin: 0;
+}
+#header {
+  width: 100%;
+  height: var(--header_height);
+}
+
+#header .header {
+  min-height: var(--header_height);
+  transition: all 0.3s ease;
+}
+
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+
+  background-color: #282828;
+}
+
+#header .nav-list .unorder_list_navbar {
+  list-style: none;
+  position: absolute;
+  width: 300px;
+  height: 0;
+  right: 0;
+  top: calc(var(--header_height) + 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#header .nav-list .navbar_list1 {
+  height: 200px;
+  background-color: tomato;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+}
+#header .nav-list span {
+  background-color: red;
+}
+
+#header .nav-list .unorder_list_navbar a {
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  font-family: "Playfair", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  height: max-content;
+  z-index: 100;
+  cursor: pointer;
+  color: whitesmoke;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#header .nav-list .unorder_list_navbar a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgb(0, 136, 255);
+  font-size: 13rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+#header .nav-list .unorder_list_navbar li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+  font-size: 10px;
+}
+#header .nav-list .unorder_list_navbar li:hover a {
+  color: white;
+}
+#header .parent {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(0.8);
+  margin-right: 20px;
+}
+
+#header .parent:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: parent_puls 1s ease infinite;
+}
+
+#header .brand h1 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#header .brand span {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#header .parent .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+#header h1 span {
+  color: rgb(250, 29, 40);
+}
+#header h1 {
+  letter-spacing: 2px;
+  color: whitesmoke;
+}
+#header .parent .bar::after,
+#header .parent .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .parent .bar::after {
+  top: 8px;
+}
+#header .parent .bar::before {
+  bottom: 8px;
+}
+/* Keyframes */
+
+/* End Keyframes */
+
+/* Media Query For Tablet */
+
+@media only screen and (max-width: 768px) {
+  .brand h1 {
+    font-size: 12px;
+    color: wheat;
+  }
+  .parent_with_pic {
+    flex-direction: column;
+  }
+  #hero img {
+    width: 100%;
+    margin-top: 2%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cta {
+    font-size: 2.5rem;
+    padding: 20px 60px;
+  }
+  h1.section-title {
+    font-size: 6rem;
+  }
+
+  /* Hero */
+  #hero h1 {
+    font-size: 7rem;
+  }
+
+  /* End Hero */
+
+  /* Services Section */
+  #services .service-bottom .service-item {
+    flex-basis: 45%;
+    margin: 2.5%;
+  }
+  /* End Services Section */
+
+  /* End contact  */
+}
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+  /* header */
+
+  #header .parent {
+    display: none;
+  }
+  #header .nav-list .unorder_list_navbar {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+  }
+  #header .nav-list .unorder_list_navbar li {
+    display: inline-block;
+  }
+  #header .nav-list .unorder_list_navbar li a {
+    font-size: 1.5rem;
+  }
+  #header .nav-list .unorder_list_navbar a:after {
+    display: none;
+  }
+  /* End header */
+
+  #services .service-bottom .service-item {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+}

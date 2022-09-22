@@ -1,11 +1,12 @@
+"use strict";
 class FooterComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `  <section id="footer">
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `  <section id="footer">
     <div class="footer_container">
      
       <div class="social_networks">
@@ -26,6 +27,6 @@ class FooterComponent extends HTMLElement {
     </div>
     <p>Copyright © 2022 Alliancecodes AB. All rights reserved</p>
   </section>`;
-  }
+    }
 }
 window.customElements.define("footer-component", FooterComponent);

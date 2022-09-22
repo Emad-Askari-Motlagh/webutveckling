@@ -1,11 +1,12 @@
+"use strict";
 class ContactComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `<section id="contact">
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `<section id="contact">
     <div class="contact container">
       <div>
         <h1 class="section-title">Contact <span>info</span></h1>
@@ -36,6 +37,6 @@ class ContactComponent extends HTMLElement {
       </div>
     </div>
     </section>`;
-  }
+    }
 }
 window.customElements.define("contact-component", ContactComponent);

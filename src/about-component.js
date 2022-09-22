@@ -1,11 +1,12 @@
+"use strict";
 class AboutComponent extends HTMLElement {
-  constructor() {
-    super();
-    // element created
-  }
-  // connect component
-  connectedCallback() {
-    this.innerHTML = ` <section id="about">
+    constructor() {
+        super();
+        // element created
+    }
+    // connect component
+    connectedCallback() {
+        this.innerHTML = `<div id="about">
       <div class="col-left">
         <div class="about-img">
           <img src="../public/work.png" alt="img">
@@ -21,7 +22,7 @@ class AboutComponent extends HTMLElement {
           reprehenderit libero enim!</p>
         <a href="#" class="cta">Download Resume</a>
       </div>
-  </section>`;
-  }
+  </div>`;
+    }
 }
 window.customElements.define("about-component", AboutComponent);

@@ -246,9 +246,11 @@ p {
 #hero .hero_container .primary_img {
   margin-right: 10px;
   width: 400px;
-  background-color: red;
   position: relative;
   z-index: 0;
+}
+#hero .img-parent {
+  position: relative;
 }
 #hero .hero_container .primary_img::after {
   content: "";
@@ -258,8 +260,12 @@ p {
   left: -20px;
   bottom: -20px;
   z-index: 1;
+}
 
-  background-color: red;
+#hero .blob {
+  position: absolute;
+  right: 0px;
+  bottom: -30px;
 }
 #hero .contact_parent {
   display: flex;
@@ -304,7 +310,6 @@ p {
   height: 20%;
   object-fit: contain;
   position: relative;
-  background-color: red;
 }
 #hero .parent_with_pic img::before {
   content: "";
@@ -572,6 +577,10 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   width: 90%;
+}
+#contact input {
+  color: #242424;
+  background-color: red;
 }
 #contact .contact-items {
   /* max-width: 400px; */
