@@ -1,4 +1,4 @@
-import { change_style_function } from "./utils/style-modifiers.js";
+import { change_style_function } from "../utils/style-modifiers.js";
 class HeaderComponent extends HTMLElement {
     constructor() {
         super();
@@ -22,8 +22,8 @@ class HeaderComponent extends HTMLElement {
           <div class="bar"></div>
         </div>
         <ul class="unorder_list_navbar">
-          <li><span><a href="#hero" data-after="Home">Home</a></span></li>
-          <li><a href="/src/form/form_cont.html" data-after="Service">Login</a></li>
+          <li><span><a id="home" href="/src/index.html" data-after="Home">Home</a></span></li>
+          <li><a  href="/src/form/form_cont.html" data-after="Service">Login</a></li>
           <li><a href="#projects" data-after="Projects">Projects</a></li>
           <li><a href="#about" data-after="About">About</a></li>
           <li ><a href="#contact" data-after="Contact">Contact</a></li>
@@ -36,6 +36,13 @@ class HeaderComponent extends HTMLElement {
         var my_header = document.getElementById("my_header");
         var moreToggle = document.querySelector(".unorder_list_navbar");
         var toggle = document.getElementById("header");
+        const home = document.getElementById("home");
+        //Get the endpoint attribute and set it to anchor tag
+        const endpoint = this.getAttribute("endpoint");
+        if (home && endpoint) {
+            home === null || home === void 0 ? void 0 : home.setAttribute("href", endpoint);
+        }
+        console.log(home === null || home === void 0 ? void 0 : home.getAttribute("href"));
         if (my_button) {
             my_button.addEventListener("click", function () {
                 my_header && change_style_function(my_header);
