@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Login page for --- website" />
+    <meta
+      name="keywords"
+      content="form, login, frontenutvecklare, frontend, login, cv"
+    />
+    <meta name="author" content="Emad Askareimotlagh" />
+    <title>Frontendutvecklare test login form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../error-modal/style.css" />
     <title>Form Validator</title>
   </head>
   <body>
@@ -12,9 +20,11 @@
       src="../header-component/header-component.js"
       type="module"
     ></script>
+    <script src="../error-modal/error-component.js" type="module"></script>
     <header-component endpoint="/src/index.html"></header-component>
+
     <div class="container">
-      <form id="form" class="form">
+      <form id="form">
         <h2>Register With Us</h2>
         <div class="form-control">
           <label for="username">Username</label>
@@ -40,10 +50,11 @@
           />
           <small>Error message</small>
         </div>
+        <error-component></error-component>
         <button type="submit">Submit</button>
       </form>
     </div>
-
+    <div class="forgot-pass"><a href="#">Forgot your password?</a></div>
     <script src="./validatesForm.js"></script>
   </body>
 </html>

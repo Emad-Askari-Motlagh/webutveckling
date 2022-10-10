@@ -10,11 +10,11 @@ class LayoutComponent extends HTMLElement {
     // connect component
     connectedCallback() {
         this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `<div class="module">
- 
+        this.shadowRoot.innerHTML = `
+      <div class="module">
       <header-component ></header-component>
- <slot name='with-layout'></slot>
-  </div>`;
+      <slot name='with-layout'></slot>
+      </div>`;
     }
 }
 window.customElements.define("layout-component", LayoutComponent);

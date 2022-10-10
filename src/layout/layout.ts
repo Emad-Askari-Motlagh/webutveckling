@@ -2,7 +2,6 @@ class LayoutComponent extends HTMLElement {
   constructor() {
     super();
     // element created
-
     const script = document.createElement("script");
     script.setAttribute("type", "module");
     script.setAttribute("src", "../header-component.js");
@@ -11,11 +10,11 @@ class LayoutComponent extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: "open" });
 
-    (this.shadowRoot as ShadowRoot).innerHTML = `<div class="module">
- 
+    (this.shadowRoot as ShadowRoot).innerHTML = `
+      <div class="module">
       <header-component ></header-component>
- <slot name='with-layout'></slot>
-  </div>`;
+      <slot name='with-layout'></slot>
+      </div>`;
   }
 }
 window.customElements.define("layout-component", LayoutComponent);

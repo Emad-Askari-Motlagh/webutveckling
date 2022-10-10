@@ -7,21 +7,21 @@
 }
 #header {
   width: 100%;
-  height: var(--header_height);
+  height: var(--heder_height);
 }
 
 #header .header {
-  min-height: var(--header_height);
+  min-height: var(--heder_height);
   transition: all 0.3s ease;
 }
 
 #header .nav-bar {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   height: 100%;
-  background-color: #282828;
+  background-color: tomato;
 }
 
 #header .nav-list .unorder_list_navbar {
@@ -30,27 +30,21 @@
   width: 300px;
   height: 0;
   right: 0;
-  top: calc(var(--header_height));
+  top: var(--heder_height);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   z-index: 100;
   overflow: hidden;
   transition: all 0.3s ease;
 }
-
 #header .nav-list .navbar_list1 {
-  height: max-content;
+  height: 200px;
   background-color: tomato;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
 }
 #header .nav-list span {
-  background-color: red;
+  background-color: tomato;
 }
 
 #header .nav-list .unorder_list_navbar a {
@@ -58,21 +52,21 @@
   font-weight: 500;
   letter-spacing: 0.2rem;
   text-decoration: none;
+  color: black;
   font-family: "Playfair", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
   display: block;
-  height: max-content;
   z-index: 100;
   cursor: pointer;
   color: whitesmoke;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.767);
   margin: auto;
   text-align: center;
-  margin-top: 10px;
 }
 
 #header .nav-list .unorder_list_navbar a::after {
-  content: "";
+  content: attr(data-after);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -86,10 +80,16 @@
 #header .nav-list .unorder_list_navbar li:hover a::after {
   transform: translate(-50%, -50%) scale(1);
   letter-spacing: initial;
-  font-size: 10px;
+  font-size: 12px;
 }
 #header .nav-list .unorder_list_navbar li:hover a {
   color: white;
+}
+#header .change_theme_button {
+  border-width: 0;
+  padding: 0.5em 1.5em;
+  background-color: teal;
+  border-radius: 10px;
 }
 #header .parent {
   height: 60px;
@@ -113,16 +113,12 @@
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid lightblue;
   animation: parent_puls 1s ease infinite;
 }
 
 #header .brand h1 {
-  font-size: 14px;
-  text-transform: uppercase;
-}
-#header .brand span {
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 #header .parent .bar {
@@ -133,11 +129,13 @@
   z-index: -1;
 }
 #header h1 span {
-  color: rgb(250, 29, 40);
+  color: rgb(250, 29, 29);
+  text-shadow: initial;
+  margin: 0 5px;
 }
 #header h1 {
   letter-spacing: 2px;
-  color: whitesmoke;
+  text-shadow: 1px 1px 3px black;
 }
 #header .parent .bar::after,
 #header .parent .bar::before {
@@ -156,7 +154,6 @@
 #header .parent .bar::before {
   bottom: 8px;
 }
-/* Keyframes */
 
 /* End Keyframes */
 
@@ -188,7 +185,10 @@
   #hero h1 {
     font-size: 7rem;
   }
-
+  #hero .parent_with_pic {
+    flex-direction: row;
+    background-color: red;
+  }
   /* End Hero */
 
   /* Services Section */

@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "module": "es2015",
+  "module": "es2022",
   "dependencies": {
     "bootstrap": "^5.2.0",
     "html-to-text": "^8.2.1",

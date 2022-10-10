@@ -5,7 +5,7 @@ class FooterComponent extends HTMLElement {
   }
   // connect component
   connectedCallback() {
-    this.innerHTML = `  <section id="footer">
+    this.innerHTML = ` <section id="footer">
     <div class="footer_container">
      
       <div class="social_networks">

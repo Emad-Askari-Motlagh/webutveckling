@@ -17,5 +17,5 @@ export function changeFontStyle(ref: HTMLElement, fontSize: string) {
 }
 //make the size smaller and none to text
 export function changeSizeStyle(ref: HTMLElement, scale: string) {
-  ref.style.transform = `scale(${scale})`;
+  ref.style.backgroundColor = `red`;
 }
